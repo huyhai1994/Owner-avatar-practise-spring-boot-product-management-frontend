@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+    <title></title>
+</head>
+<body onload="displayCategory()">
+
+<p class="h1 text-white text-center my-5 shadow">Tạo mới</p>
+<div class="container text-end text-capitalize">
+    <form class="bg-light border my-5 px-5 py-5 rounded-3 border-5 shadow shadow-lg">
+        <div class="row my-3">
+            <div class="col col-md-4 col-sm-12">
+                <label for="price" class="form-label h3">Gia: </label>
+            </div>
+            <div class="col col-md-8 col-sm-12">
+                <input type="text" class="form-control" id="price">
+            </div>
+        </div>
+        <!--TODO: So luong-->
+        <div class="row my-3">
+            <div class="col col-md-4 col-sm-12">
+                <label for="quantity" class="form-label h3">So Luong: </label>
+            </div>
+            <div class="col col-md-8 col-sm-12">
+                <select class="form-select" id="quantity" aria-label="Default select example">
+                    <script>function changeTheQuantity() {
+                        let content = `<option selected>-Tuy Chon-</option>`;
+                        for (let i = 1; i <= 100; i++) {
+                            content += `<option value="${i}">${i}</option>`;
+                        }
+                        document.getElementById("quantity").innerHTML = content;
+                    }
+
+                    changeTheQuantity();
+                    </script>
+                </select>
+            </div>
+        </div>
+        <!--TODO: Thanh lua chon mau sac-->
+        <div class="row my-3">
+            <div class="col col-md-4 col-sm-12">
+                <label for="color" class="form-label h3">Mau sac</label>
+            </div>
+            <div class="col col-md-8 col-sm-12">
+                <select class="form-select" id="color" aria-label="Default select example">
+                </select>
+            </div>
+        </div>
+        <!--TODO: Thanh mo ta-->
+        <div class="row my-3 form-outline">
+            <div class="col col-md-4 col-sm-12">
+                <label for="description" class="form-label form-control-outline h3">Mo ta san pham</label>
+            </div>
+            <div class="col col-md-8 col-sm-12">
+                <textarea class="form-control" id="description">
+                </textarea>
+            </div>
+        </div>
+        <!--TODO: Thanh lua chon the loai-->
+        <div class="row my-3">
+            <div class="col col-md-4 col-sm-12">
+                <label for="color" class="form-label h3">The Loai</label>
+            </div>
+            <div class="col col-md-8 col-sm-12">
+                <select class="form-select" id="category" aria-label="Default select example">
+                </select>
+            </div>
+        </div>
+
+        <!--TODO: Nut submit-->
+        <button type="submit" value="Add" onclick="create()" class="btn btn-primary w-100">Submit</button>
+    </form>
+</div>
+<script>
+    function changeTheSelectOptionColor() {
+        const colors = ["Yellow", "Green", "Red"];
+        colors.push("Golden");
+        let content = `<option selected>Chon mau</option>`;
+        colors.forEach((color) => {
+            content += `<option value="${color}">${color}</option>`;
+        })
+        document.getElementById("color").innerHTML = content;
+    }
+    changeTheSelectOptionColor();
+</script>
+</body>
+</html>
