@@ -21,8 +21,8 @@ function displayList() {
             <td class = "text-white">${data[i].quantity}</td>
             <td class="text-white">${data[i].category.name}</td>
             <td>
-                <Button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal">Update</Button>
-                <span><button type="button" class="btn btn-danger" onclick="deleteById(${data[i].id})">Delete</button></span>
+                <Button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></Button>
+                <span><button type="button" class="btn btn-danger" onclick="deleteById(${data[i].id})"><i class="fa-solid fa-trash"></i></button></span>
             </td>
         </tr>`;
             }
