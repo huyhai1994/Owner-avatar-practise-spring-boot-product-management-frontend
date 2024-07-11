@@ -21,7 +21,7 @@ function displayList() {
             <td class = "text-white">${data[i].quantity}</td>
             <td class="text-white">${data[i].category.name}</td>
             <td>
-                <Button type="button" class="btn btn-success" onclick="window.location.href='/update/index.html/${i + 1}'">Update</Button>
+                <Button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal">Update</Button>
                 <span><button type="button" class="btn btn-danger" onclick="deleteById(${data[i].id})">Delete</button></span>
             </td>
         </tr>`;

@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--TODO: bootstrap 5.0.2-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--TODO: ajax 1.9.1-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--TODO: local style sheet-->
     <link rel="stylesheet" href="style.css">
+    <!--TODO: font awesome 6.5.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--TODO: local javascript-->
     <script type="text/javascript" src="index.js"></script>
-    <title>Title</title>
+    <title>List</title>
 </head>
 <body>
+<!--TODO: Content Title-->
 <p class="h1 text-center text-white my-5">Product List</p>
 <div class="container py-4">
+    <!--TODO: add new-->
     <div class="row d-flex">
         <div class="col">
             <button type="button" class="btn btn-primary"
@@ -19,6 +27,7 @@
             </button>
         </div>
     </div>
+    <!--TODO: Content Body-->
     <div class="table-responsive">
         <table class="table table-hover table-bordered
             " id="products">
@@ -39,7 +48,7 @@
                 <td id="quantity">12</td>
                 <td id="category">tivi</td>
                 <td>
-                    <Button type="button" class="btn btn-success">Update</Button>
+                    <Button type="button" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></Button>
                     <span><button type="button" class="btn btn-danger">Delete</button></span>
                 </td>
             </tr>
@@ -48,28 +57,97 @@
 
 </div>
 
-<!-- Modal -->
+<!--TODO: update Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-pen-to-square"></i></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <!--TODO: Form sua-->
+                <form class=" px-5 py-5">
+                    <div class="row my-3">
+                        <div class="col col-md-4 col-sm-12">
+                            <label for="price-edit" class="form-label h3">Gia: </label>
+                        </div>
+                        <div class="col col-md-8 col-sm-12">
+                            <input type="text" class="form-control" id="price-edit">
+                        </div>
+                    </div>
+                    <!--TODO: So luong-->
+                    <div class="row my-3">
+                        <div class="col col-md-4 col-sm-12">
+                            <label for="quantity-edit" class="form-label h3">So Luong: </label>
+                        </div>
+                        <div class="col col-md-8 col-sm-12">
+                            <select class="form-select" id="quantity-edit" aria-label="Default select example">
+                                <script>function changeTheQuantity() {
+                                    let content = `<option selected>-Tuy Chon-</option>`;
+                                    for (let i = 1; i <= 100; i++) {
+                                        content += `<option value="${i}">${i}</option>`;
+                                    }
+                                    document.getElementById("quantity-edit").innerHTML = content;
+                                }
+
+                                changeTheQuantity();
+                                </script>
+                            </select>
+                        </div>
+                    </div>
+                    <!--TODO: Thanh lua chon mau sac-->
+                    <div class="row my-3">
+                        <div class="col col-md-4 col-sm-12">
+                            <label for="color-edit" class="form-label h3">Mau sac</label>
+                        </div>
+                        <div class="col col-md-8 col-sm-12">
+                            <select class="form-select" id="color-edit" aria-label="Default select example">
+                                <script>
+                                    function changeTheSelectOptionColor() {
+                                        const colors = ["Yellow", "Green", "Red"];
+                                        let content = `<option selected>-Chon mau-</option>`;
+                                        colors.forEach((color) => {
+                                            content += `<option value="${color}">${color}</option>`;
+                                        })
+                                        document.getElementById("color-edit").innerHTML = content;
+                                    }
+
+                                    changeTheSelectOptionColor();
+                                </script>
+                            </select>
+                        </div>
+                    </div>
+                    <!--TODO: Thanh mo ta-->
+                    <div class="row my-3 form-outline">
+                        <div class="col col-md-4 col-sm-12">
+                            <label for="description-edit" class="form-label form-control-outline h3">Mo ta san
+                                pham</label>
+                        </div>
+                        <div class="col col-md-8 col-sm-12">
+                <textarea class="form-control" id="description-edit">
+                </textarea>
+                        </div>
+                    </div>
+                    <!--TODO: Thanh lua chon the loai-->
+                    <div class="row my-3">
+                        <div class="col col-md-4 col-sm-12">
+                            <label for="category-edit" class="form-label h3">The Loai</label>
+                        </div>
+                        <div class="col col-md-8 col-sm-12">
+                            <select class="form-select" id="category-edit" aria-label="Default select example">
+                            </select>
+                        </div>
+                    </div>
+                    <!--TODO: Nut submit-->
+                    <button type="submit" value="Add" onclick="update()" class="btn btn-primary w-100">Submit</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
-
-
+<!--TODO: bootstrap 5.0.2 java script-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script onload="displayList()"></script>
-
-
 </body>
 </html>

@@ -48,6 +48,18 @@
             </div>
             <div class="col col-md-8 col-sm-12">
                 <select class="form-select" id="color" aria-label="Default select example">
+                    <script>
+                        function changeTheSelectOptionColor() {
+                            const colors = ["Yellow", "Green", "Red"];
+                            let content = `<option selected>-Chon mau-</option>`;
+                            colors.forEach((color) => {
+                                content += `<option value="${color}">${color}</option>`;
+                            })
+                            document.getElementById("color").innerHTML = content;
+                        }
+
+                        changeTheSelectOptionColor();
+                    </script>
                 </select>
             </div>
         </div>
@@ -76,17 +88,6 @@
         <button type="submit" value="Add" onclick="create()" class="btn btn-primary w-100">Submit</button>
     </form>
 </div>
-<script>
-    function changeTheSelectOptionColor() {
-        const colors = ["Yellow", "Green", "Red"];
-        colors.push("Golden");
-        let content = `<option selected>Chon mau</option>`;
-        colors.forEach((color) => {
-            content += `<option value="${color}">${color}</option>`;
-        })
-        document.getElementById("color").innerHTML = content;
-    }
-    changeTheSelectOptionColor();
-</script>
+
 </body>
 </html>
