@@ -14,7 +14,7 @@
     <script type="text/javascript" src="index.js"></script>
     <title>List</title>
 </head>
-<body>
+<body onload=displayCategory('category-edit')>
 <!--TODO: navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
@@ -26,37 +26,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" type="button" onclick="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Create</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
         </div>
     </div>
 </nav>
-
 <!--TODO: Content Title-->
 <p class="h1 text-center text-white" style="margin-top: 150px;">Product List</p>
 <div class="container py-4">
@@ -103,7 +84,9 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-pen-to-square"></i></h5>
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <!--TODO: Update icons-->
+                    <i class="fa-solid fa-pen-to-square"></i></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -181,7 +164,7 @@
                         </div>
                     </div>
                     <!--TODO: Nut submit-->
-                    <button type="submit" value="Add" onclick="update()" class="btn btn-primary w-100">Submit</button>
+                    <button type="submit" value="Add" onclick="updateProduct()" class="btn btn-primary w-100">Submit</button>
                 </form>
             </div>
         </div>
@@ -190,5 +173,8 @@
 <!--TODO: bootstrap 5.0.2 java script-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script onload="displayList()"></script>
+<script src="/create/index.js">
+</script>
+
 </body>
 </html>
