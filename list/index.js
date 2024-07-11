@@ -14,7 +14,7 @@ function displayList() {
             <th class="text-white">Action</th>
         </tr>`
             for (let i = 0; i < data.length; i++) {
-                content += `  <tr>
+                content += ` <tr>
             <td class="text-white">${i + 1}</td>
             <td class="text-white">${data[i].color}</td>
             <td class="text-white">${data[i].description}</td>
